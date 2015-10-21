@@ -410,6 +410,7 @@ let g:neocomplcache_clang_library_path = '/usr/share/clang'
 " Include するディレクトリは各自の環境に合わせて設定
 let g:neocomplcache_clang_user_options =
        \ '-I /usr/include/ '.
+       \ '-I /usr/include/cairo/ '.
        \ '-fms-extensions -fgnu-runtime '.
        \ '-include malloc.h '
 
@@ -464,7 +465,9 @@ NeoBundleLazy "sjl/gundo.vim", {
 
 NeoBundle "scrooloose/syntastic"
 let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -DLOCAL'
+let g:syntastic_cpp_compiler_options =
+    \ ' -std=c++11 -DLOCAL '.
+    \ '-I /usr/include/cairo/ '
 
 let g:syntastic_python_checkers = 1
 " let g:syntastic_python_python_exec = 'python3'
